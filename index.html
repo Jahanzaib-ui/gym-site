@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaib Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <style>
+        /* Define CSS Variables for easier management */
+        :root {
+            --primary-bg: rgba(0, 0, 0, 0.7);
+            --primary-color: white;
+            --btn-bg: black;
+            --btn-hover-bg: rgb(35, 34, 34);
+            --font-family: "Abril Fatface", serif;
+            --font-size-lg: 20px;
+            --font-size-md: 18px;
+            --font-size-sm: 16px;
+            --btn-padding: 8px 12px;
+            --input-padding: 10px;
+        }
+
+        /* Global Styles */
+        body {
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background-image: url("gym.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Flexbox Container for header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--primary-bg);
+            flex-wrap: wrap;
+        }
+
+        .left,
+        .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .left img {
+            width: 50px;
+            filter: invert(100%);
+            margin-right: 10px;
+        }
+
+        .left div {
+            font-size: var(--font-size-lg);
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 15px;
+        }
+
+        .navbar li {
+            margin: 0;
+        }
+
+        .navbar li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: var(--font-size-md);
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: grey;
+            text-decoration: underline;
+        }
+
+        .btn {
+            background-color: var(--btn-bg);
+            color: var(--primary-color);
+            padding: var(--btn-padding);
+            border: 2px solid gray;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--btn-hover-bg);
+        }
+
+        /* Centered Form Container */
+        .container {
+            margin: 100px auto 50px;
+            padding: 20px;
+            background: var(--primary-bg);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: var(--font-size-lg);
+        }
+
+        .form-group input {
+            width: 100%;
+            margin: 10px 0;
+            padding: var(--input-padding);
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: var(--font-size-sm);
+        }
+
+        .container button {
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+            padding: var(--input-padding);
+            font-size: var(--font-size-md);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            .navbar li a {
+                font-size: var(--font-size-sm);
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .container h3 {
+                font-size: var(--font-size-md);
+            }
+
+            .form-group input {
+                font-size: var(--font-size-sm);
+            }
+
+            .container button {
+                font-size: var(--font-size-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar li a {
+                font-size: 12px;
+            }
+
+            .btn {
+                font-size: 10px;
+                padding: 6px 10px;
+            }
+
+            .container {
+                margin-top: 30px;
+            }
+
+            .container h3 {
+                font-size: var(--font-size-sm);
+            }
+
+            .form-group input {
+                font-size: 12px;
+            }
+
+            .container button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img src="logo.jpg" alt="logo img">
+            <div>Zaib Fitness</div>
+        </div>
+        <ul class="navbar">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">FITNESS CALCULATOR</a></li>
+            <li><a href="#">CONTACT US</a></li>
+        </ul>
+        <div class="right">
+            <button class="btn">Call us</button>
+            <button class="btn">Email us</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <h3>JOIN THE BEST GYM OF LAHORE</h3>
+        <form action="backend.php">
+            <div class="form-group"><input type="text" placeholder="Enter Your Name"></div>
+            <div class="form-group"><input type="text" placeholder="Enter Your Age"></div>
+            <div class="form-group"><input type="text" placeholder="Enter Your Weight"></div>
+            <div class="form-group"><input type="text" placeholder="Enter Your Height"></div>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
